@@ -42,18 +42,21 @@ class CalculatorRender extends Component {
   render() {
     let { total, next, operation } = this.state;
     if (!total && !next && !operation) {
-      total = 0; 
-      next = next; 
-      operation = operation;
+      total = 0;
+      next = null;
+      operation = null;
     }
     return (
       <div className="cal-container">
         <div className="cal-output">
-        { next || operation || total }
+          { next || operation || total }
         </div>
         <div className="button-container">
           {
-            this.Val.map((b) => <Btn key={b.btn} btn={b.btn} event={(e) => this.handleClick(e)} style={b.style} />)
+            this.Val.map((b) => <Btn key={b.btn}
+            btn={b.btn}
+            event={(e) => this.handleClick(e)}
+            style={b.style} />)
           }
         </div>
       </div>
