@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
 * {
   padding: 0;
   margin: 0;
-  font-family: 'Rubik', sans-serif;
+  font-family: 'Varela Round', sans-serif;
 }
 
 html {
@@ -45,43 +47,56 @@ body {
 .cal-container {
   display: flex;
   flex-direction: column;
-  background-color: lightgrey;
   width: 30%;
-  height: auto;
-  gap: 1px;
+  height: 60%;
+  gap: 5px;
   flex-wrap: wrap;
+  border-radius: 5px;
+  background-color: rgb(80, 253, 195);
+  padding: 1em;
 }
 
 .cal-output {
+  line-height: 1.6em;
   text-align: end;
-  background-color: grey;
+  background-color: black;
+  max-height: 3em;
   font-size: 2.5em;
   padding: 0.2em;
-  color: white;
+  color: rgb(80, 253, 195);
   overflow-x: auto;
   max-width: 100%;
+  flex: 1;
+  box-shadow: 2px 2px 2px rgba(24, 24, 24, 0.425);
+  border-radius: 5px;
 }
 
 .button-container {
   display: grid;
+  flex: 4;
   grid-template-areas: "a a a a";
-  gap: 1px;
+  gap: 5px;
 }
 
 .btn {
-  height: 3em;
+  height: 100%;
   border: none;
   font-weight: bold;
+  font-size: 1em;
+  box-shadow: 2px 2px 2px rgba(24, 24, 24, 0.425);
+  border-radius: 5px;
 }
 
 .grey {
-  background-color: rgb(187, 187, 187);
+  background-color: black;
+  color: white;
 }
 
 .orange {
-  background-color: orange;
+  background-color: white;
+  color: black;
 }
 
-.btn-zero {
+.wide {
   grid-column: 1 / span 2;
 }

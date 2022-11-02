@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState } from 'react'
 import Btn from './Button';
 import calculate from '../logic/calculator';
@@ -22,13 +23,18 @@ const Val = [
   { btn: '2', style: 'btn grey' },
   { btn: '3', style: 'btn grey' },
   { btn: '+', style: 'btn orange' },
-  { btn: '0', style: 'btn grey btn-zero' },
+  { btn: '0', style: 'btn grey wide' },
   { btn: '.', style: 'btn grey' },
   { btn: '=', style: 'btn orange' },
 ];
 
 const handleClick = (e) => {
-  const obj = calculate(state, e);
+  const obj = calculate(result, e);
+  if (!obj.total && !obj.next && !obj.operation) {
+    obj.total = 0;
+    obj.next = null;
+    obj.operation = null;
+  }
   setResult(obj);
 };
     
