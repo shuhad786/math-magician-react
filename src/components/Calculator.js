@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Btn from './Button';
 import calculate from '../logic/calculator';
 
+
 function calculator() {
 const [result, setResult] = useState({ total: 0, next: null, operation: null });
 
@@ -41,7 +42,7 @@ const handleClick = (e) => {
   return (
     <div className="cal-container">
       <div className="cal-output">
-      { result.next || result.operation || result.total }
+        { result.next || result.operation || result.total }
       </div>
       <div className="button-container">
         {
