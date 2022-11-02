@@ -1,5 +1,4 @@
 /* eslint linebreak-style: ['error', 'windows'] */
-/* eslint-disable */
 import React, { Component } from 'react';
 import Btn from './Button';
 import calculate from '../logic/calculator';
