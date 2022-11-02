@@ -1,4 +1,5 @@
 /* eslint linebreak-style: ["error", "windows"] */
+/* eslint-disable */
 import './App.css';
 import React, { Component } from 'react';
 import Calculator from './components/Calculator';
