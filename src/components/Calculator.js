@@ -35,7 +35,6 @@ class CalculatorRender extends Component {
   }
 
   handleClick = (e) => {
-    console.log(e);
     const obj = calculate(this.state, e);
     this.setState(obj);
   }
@@ -43,7 +42,9 @@ class CalculatorRender extends Component {
   render() {
     let { total, next, operation } = this.state;
     if (!total && !next && !operation) {
-      total = 0;
+      total = 0; 
+      next = next; 
+      operation = operation;
     }
     return (
       <div className="cal-container">
