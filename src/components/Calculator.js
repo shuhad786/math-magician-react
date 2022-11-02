@@ -10,7 +10,7 @@ class CalculatorRender extends Component {
       { btn: 'AC', style: 'btn grey' },
       { btn: '+/-', style: 'btn grey' },
       { btn: '%', style: 'btn grey' },
-      { btn: '/', style: 'btn orange' },
+      { btn: '÷', style: 'btn orange' },
       { btn: '7', style: 'btn grey' },
       { btn: '8', style: 'btn grey' },
       { btn: '9', style: 'btn grey' },
