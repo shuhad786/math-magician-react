@@ -1,50 +1,61 @@
+/* eslint linebreak-style: ['error', 'windows'] */
+/* eslint-disable */
 import React, { Component } from 'react';
+import Btn from './Button';
+import calculate from '../logic/calculator';
 
 class CalculatorRender extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.Val = [
+      { btn: 'AC', style: 'btn grey' },
+      { btn: '+/-', style: 'btn grey' },
+      { btn: '%', style: 'btn grey' },
+      { btn: '/', style: 'btn orange' },
+      { btn: '7', style: 'btn grey' },
+      { btn: '8', style: 'btn grey' },
+      { btn: '9', style: 'btn grey' },
+      { btn: 'x', style: 'btn orange' },
+      { btn: '4', style: 'btn grey' },
+      { btn: '5', style: 'btn grey' },
+      { btn: '6', style: 'btn grey' },
+      { btn: '-', style: 'btn orange' },
+      { btn: '1', style: 'btn grey' },
+      { btn: '2', style: 'btn grey' },
+      { btn: '3', style: 'btn grey' },
+      { btn: '+', style: 'btn orange' },
+      { btn: '0', style: 'btn grey btn-zero' },
+      { btn: '.', style: 'btn grey' },
+      { btn: '=', style: 'btn orange' },
+    ];
+    this.state = {
+      total: 0,
+      next: null,
+      operation: null,
+    };
+  }
+
+  handleClick = (e) => {
+    console.log(e);
+    const obj = calculate(this.state, e);
+    this.setState(obj);
   }
 
   render() {
+    let { total, next, operation } = this.state;
+    if (!total && !next && !operation) {
+      total = 0;
+    }
     return (
       <div className="cal-container">
-        <span className="cal-output">0</span>
-
-        <span className="cal-grid">
-          <button type="button" className="btn-grey">AC</button>
-          <button type="button" className="btn-grey">+/-</button>
-          <button type="button" className="btn-grey">%</button>
-          <button type="button" className="btn-orange">/</button>
-        </span>
-
-        <span className="cal-grid">
-          <button type="button" className="btn-grey">7</button>
-          <button type="button" className="btn-grey">8</button>
-          <button type="button" className="btn-grey">9</button>
-          <button type="button" className="btn-orange">x</button>
-        </span>
-
-        <span className="cal-grid">
-          <button type="button" className="btn-grey">4</button>
-          <button type="button" className="btn-grey">5</button>
-          <button type="button" className="btn-grey">6</button>
-          <button type="button" className="btn-orange">-</button>
-        </span>
-
-        <span className="cal-grid">
-          <button type="button" className="btn-grey">1</button>
-          <button type="button" className="btn-grey">2</button>
-          <button type="button" className="btn-grey">3</button>
-          <button type="button" className="btn-orange">+</button>
-        </span>
-
-        <span className="cal-grid-last">
-          <button type="button" className="btn-grey">0</button>
-          <button type="button" className="btn-grey">.</button>
-          <button type="button" className="btn-orange">=</button>
-        </span>
-
+        <div className="cal-output">
+        { next || operation || total }
+        </div>
+        <div className="button-container">
+          {
+            this.Val.map((b) => <Btn key={b.btn} btn={b.btn} event={(e) => this.handleClick(e)} style={b.style} />)
+          }
+        </div>
       </div>
     );
   }
