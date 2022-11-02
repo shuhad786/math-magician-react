@@ -1,4 +1,4 @@
-/* eslint linebreak-style: ["error", "windows"] */
+/*eslint linebreak-style: ["error", "unix"]*/
 /* eslint-disable */
 import './App.css';
 import React, { Component } from 'react';
