@@ -56,7 +56,8 @@ class CalculatorRender extends Component {
             this.Val.map((b) => <Btn key={b.btn}
             btn={b.btn}
             event={(e) => this.handleClick(e)}
-            style={b.style} />)
+            style={b.style} />
+            )
           }
         </div>
       </div>
