@@ -1,63 +1,49 @@
-/* eslint linebreak-style: ['error', 'windows'] */
-import React, { Component } from 'react';
+import React, { useState } from 'react'
 import Btn from './Button';
 import calculate from '../logic/calculator';
 
-class CalculatorRender extends Component {
-  constructor(props) {
-    super(props);
-    this.Val = [
-      { btn: 'AC', style: 'btn grey' },
-      { btn: '+/-', style: 'btn grey' },
-      { btn: '%', style: 'btn grey' },
-      { btn: '/', style: 'btn orange' },
-      { btn: '7', style: 'btn grey' },
-      { btn: '8', style: 'btn grey' },
-      { btn: '9', style: 'btn grey' },
-      { btn: 'x', style: 'btn orange' },
-      { btn: '4', style: 'btn grey' },
-      { btn: '5', style: 'btn grey' },
-      { btn: '6', style: 'btn grey' },
-      { btn: '-', style: 'btn orange' },
-      { btn: '1', style: 'btn grey' },
-      { btn: '2', style: 'btn grey' },
-      { btn: '3', style: 'btn grey' },
-      { btn: '+', style: 'btn orange' },
-      { btn: '0', style: 'btn grey btn-zero' },
-      { btn: '.', style: 'btn grey' },
-      { btn: '=', style: 'btn orange' },
-    ];
-    this.state = {
-      total: 0,
-      next: null,
-      operation: null,
-    };
-  }
+function calculator() {
+const [result, setResult] = useState({ total: 0, next: null, operation: null });
 
-  handleClick = (e) => {
-    console.log(e);
-    const obj = calculate(this.state, e);
-    this.setState(obj);
-  }
+const Val = [
+  { btn: 'AC', style: 'btn grey' },
+  { btn: '+/-', style: 'btn grey' },
+  { btn: '%', style: 'btn grey' },
+  { btn: '/', style: 'btn orange' },
+  { btn: '7', style: 'btn grey' },
+  { btn: '8', style: 'btn grey' },
+  { btn: '9', style: 'btn grey' },
+  { btn: 'x', style: 'btn orange' },
+  { btn: '4', style: 'btn grey' },
+  { btn: '5', style: 'btn grey' },
+  { btn: '6', style: 'btn grey' },
+  { btn: '-', style: 'btn orange' },
+  { btn: '1', style: 'btn grey' },
+  { btn: '2', style: 'btn grey' },
+  { btn: '3', style: 'btn grey' },
+  { btn: '+', style: 'btn orange' },
+  { btn: '0', style: 'btn grey btn-zero' },
+  { btn: '.', style: 'btn grey' },
+  { btn: '=', style: 'btn orange' },
+];
 
-  render() {
-    let { total, next, operation } = this.state;
-    if (!total && !next && !operation) {
-      total = 0;
-    }
-    return (
-      <div className="cal-container">
-        <div className="cal-output">
-        { next || operation || total }
-        </div>
-        <div className="button-container">
-          {
-            this.Val.map((b) => <Btn key={b.btn} btn={b.btn} event={(e) => this.handleClick(e)} style={b.style} />)
-          }
-        </div>
+const handleClick = (e) => {
+  const obj = calculate(state, e);
+  setResult(obj);
+};
+    
+  return (
+    <div className="cal-container">
+      <div className="cal-output">
+      { result.next || result.operation || result.total }
       </div>
-    );
-  }
+      <div className="button-container">
+        {
+          Val.map((b) => <Btn key={b.btn} btn={b.btn} event={(e) => handleClick(e)} style={b.style} />)
+        }
+      </div>
+    </div>
+  )
 }
 
-export default CalculatorRender;
+export default calculator;
