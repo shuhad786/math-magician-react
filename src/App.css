@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Varela+Round&display=swap');
 
 * {
   padding: 0;
@@ -15,8 +16,6 @@ html {
 }
 
 body {
-  background-size: cover;
-  background-repeat: no-repeat;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -40,8 +39,7 @@ body {
   display: flex;
   height: 100%;
   min-width: 100%;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
 }
 
 .cal-container {
@@ -99,4 +97,75 @@ body {
 
 .wide {
   grid-column: 1 / span 2;
+}
+
+.homePage {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  color: rgb(80, 253, 195);
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-title {
+  font-weight: bolder;
+  padding: 1em;
+  font-size: 3.3em;
+}
+
+.paragraphs {
+  font-size: 1.2em;
+}
+
+.quotePage {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  color: rgb(80, 253, 195);
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(80, 253, 195);
+  height: 6%;
+  align-items: center;
+}
+
+.Logo {
+  font-family: 'Press Start 2P', cursive;
+  color: black;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+.link:hover {
+  color: white;
+}
+
+.calculatorPage {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  font-size: 1.05em;
+  font-weight: 500;
+  height: 100%;
+  min-width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
 }
