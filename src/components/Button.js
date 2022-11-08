@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 
 class Button extends PureComponent {
   render() {
@@ -9,5 +10,10 @@ class Button extends PureComponent {
   }
 }
 
-export default Button;
+Button.propTypes = {
+  btn: PropTypes.string.isRequired,
+  style: PropTypes.string.isRequired,
+  event: PropTypes.func.isRequired,
+};
 
+export default Button;
