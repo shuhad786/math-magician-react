@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
-class Button extends Component {
+class Button extends PureComponent {
   render() {
     const { btn, style, event } = this.props;
     return (
