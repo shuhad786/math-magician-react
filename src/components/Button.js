@@ -1,4 +1,3 @@
-/* eslint-disable */
 import React, { Component } from 'react';
 
 class Button extends Component {
@@ -11,3 +10,4 @@ class Button extends Component {
 }
 
 export default Button;
+

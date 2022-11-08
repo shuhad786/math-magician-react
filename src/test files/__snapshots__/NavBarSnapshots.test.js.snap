@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar renders correctly 1`] = `
+<div
+  className="navBar"
+>
+  <div
+    className="Logo"
+  >
+    Math Magicians
+  </div>
+  <ul
+    className="links"
+  >
+    <a
+      className="link"
+      href="/"
+      onClick={[Function]}
+    >
+      Home
+    </a>
+    <a
+      className="link"
+      href="/calculator"
+      onClick={[Function]}
+    >
+      Calculator
+    </a>
+    <a
+      className="link"
+      href="/quotes"
+      onClick={[Function]}
+    >
+      Quotes
+    </a>
+  </ul>
+</div>
+`;
