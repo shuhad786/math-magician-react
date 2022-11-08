@@ -1,7 +1,7 @@
-/* eslint-disable */
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 
-class Button extends Component {
+class Button extends PureComponent {
   render() {
     const { btn, style, event } = this.props;
     return (
@@ -9,5 +9,11 @@ class Button extends Component {
     );
   }
 }
+
+Button.propTypes = {
+  btn: PropTypes.string.isRequired,
+  style: PropTypes.string.isRequired,
+  event: PropTypes.func.isRequired,
+};
 
 export default Button;
